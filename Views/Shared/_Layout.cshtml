@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Subtitulo</title>
+    <style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+        }
+
+        .navbar-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .navbar-menu {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar-menu li {
+            margin: 0 10px;
+        }
+
+        .navbar-menu a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .navbar-menu a:hover {
+            color: #ff9900;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-title">EstoqueWeb</div>
+        <ul class="navbar-menu">
+            <li><a asp-action="Principal">Principal</a></li>
+            <li><a asp-action="Categorias">Categorias</a></li>
+            <li><a asp-action="Produtos">Produtos</a></li>
+        </ul>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+
+</html>
