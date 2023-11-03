@@ -1,0 +1,81 @@
+@if (TempData.ContainsKey("mensagem"))
+{
+    var mensagem = MensagemModel.DesserializarMensagem(TempData["mensagem"].ToString());
+    if (mensagem.Tipo == TipoMensagem.Erro)
+    {
+        <style>
+            .alert-warning {
+                background-color: #f8d7da;
+                border: 1px solid #f5c6cb;
+                color: #721c24;
+                padding: 15px;
+                border-radius: 4px;
+                position: relative;
+                margin: 10px;
+            }
+
+            .close {
+                position: absolute;
+                right: 10px;
+                top: 5px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #721c24;
+                cursor: pointer;
+            }
+
+            .close:hover {
+                color: #f5c6cb;
+            }
+        </style>
+        <div class="alert-warning">
+            @mensagem.TextoMensagem
+            <span class="close" onclick="fecharAlerta(this)">&times;</span>
+        </div>
+
+        <script>
+            function fecharAlerta(element) {
+                element.parentElement.style.display = "none";
+            }
+        </script>
+    }
+    else
+    {
+        <style>
+            .alert-success {
+                background-color: #d4edda;
+                border: 1px solid #c3e6cb;
+                color: #155724;
+                padding: 15px;
+                border-radius: 4px;
+                position: relative;
+                margin: 10px;
+            }
+
+            .close {
+                position: absolute;
+                right: 10px;
+                top: 5px;
+                font-size: 20px;
+                font-weight: bold;
+                color: #155724;
+                cursor: pointer;
+            }
+
+            .close:hover {
+                color: #c3e6cb;
+            }
+    </style>
+
+    <div class="alert-success">
+        @mensagem.TextoMensagem
+        <span class="close" onclick="fecharAlerta(this)">&times;</span>
+    </div>
+
+    <script>
+        function fecharAlerta(element) {
+            element.parentElement.style.display = "none";
+        }
+    </script>
+    }
+}
