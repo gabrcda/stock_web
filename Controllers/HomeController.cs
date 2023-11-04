@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-// using stock_web.Models;
+using stock_web.Models;
 
 namespace stock_web.Controllers;
 

@@ -17,4 +17,10 @@
     <PackageReference Include="Newtonsoft.json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="estoque.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
